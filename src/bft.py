@@ -12,4 +12,20 @@ def bf_order(t: T | None) -> Iterable[int]:
     >>> list(bf_order(tree))
     [2, 1, 4, 3, 5]
     """
-    return  # FIXME
+    order = []
+    q = []
+
+    while(True):
+        if t:
+            order.append(t.val)
+            q.append(t.left)
+            q.append(t.right)
+            t = q.pop(0)
+        elif q:
+            t = q.pop(0)
+        else:
+            break
+
+
+    
+    return order
